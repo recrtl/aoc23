@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func splitLines(input string) []string {
+func SplitLines(input string) []string {
 	lines := strings.Split(input, "\n")
 	for i, line := range lines {
 		lines[i] = strings.TrimSuffix(line, "\r")
@@ -15,19 +15,19 @@ func splitLines(input string) []string {
 	return lines
 }
 
-func must(err error) {
+func Must(err error) {
 	if err != nil {
 		log.Fatal(err)
 	}
 }
 
-func atoi(input string) int {
+func Atoi(input string) int {
 	n, err := strconv.Atoi(input)
-	must(err)
+	Must(err)
 	return n
 }
 
-func max[T constraints.Ordered](x, y T) T {
+func Max[T constraints.Ordered](x, y T) T {
 	if x < y {
 		return y
 	}

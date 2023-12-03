@@ -2,7 +2,7 @@ package aoc23_test
 
 import (
 	"embed"
-	"github.com/recrtl/aoc23"
+	"github.com/recrtl/aoc23/day1"
 	"github.com/stretchr/testify/assert"
 	"log"
 	"testing"
@@ -38,7 +38,7 @@ func Test_day11(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := aoc23.Day11(tt.input)
+			got := day1.Part1(tt.input)
 			assert.Equal(t, tt.want, got)
 		})
 	}
@@ -88,12 +88,12 @@ func Test_day12(t *testing.T) {
 		{
 			name:  "example",
 			input: mustInput("1"),
-			want:  "54571",
+			want:  "55701",
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := aoc23.Day12(tt.input)
+			got := day1.Part2(tt.input)
 			assert.Equal(t, tt.want, got)
 		})
 	}

@@ -1,17 +1,18 @@
-package aoc23
+package day1
 
 import (
+	"github.com/recrtl/aoc23"
 	"log"
 	"regexp"
 	"strconv"
 	"strings"
 )
 
-func Day11(input string) string {
+func Part1(input string) string {
 	r := regexp.MustCompile("([0-9])")
 
 	sum := 0
-	lines := splitLines(input)
+	lines := aoc23.SplitLines(input)
 	for _, line := range lines {
 		matches := r.FindAllString(line, -1)
 		n, _ := strconv.Atoi(matches[0] + matches[len(matches)-1])
@@ -21,12 +22,12 @@ func Day11(input string) string {
 	return strconv.Itoa(sum)
 }
 
-func Day12(input string) string {
+func Part2(input string) string {
 	matches := []string{"one", "1", "two", "2", "three", "3", "four", "4", "five", "5", "six", "6", "seven", "7", "eight", "8", "nine", "9"}
 	replacer := strings.NewReplacer(matches...)
 
 	sum := 0
-	lines := splitLines(input)
+	lines := aoc23.SplitLines(input)
 	for _, line := range lines {
 		first := ""
 		last := ""
