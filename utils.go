@@ -33,3 +33,7 @@ func Max[T constraints.Ordered](x, y T) T {
 	}
 	return x
 }
+
+func InRange[T constraints.Ordered](x, min, max T) bool {
+	return x >= min && x <= max
+}
