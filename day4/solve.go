@@ -1,4 +1,4 @@
-package day4
+package day
 
 import (
 	"github.com/recrtl/aoc23"

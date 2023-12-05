@@ -1,23 +1,14 @@
-package aoc23_test
+package day1_test
 
 import (
-	"embed"
+	_ "embed"
 	"github.com/recrtl/aoc23/day1"
 	"github.com/stretchr/testify/assert"
-	"log"
 	"testing"
 )
 
-//go:embed inputs/*
-var content embed.FS
-
-func mustInput(name string) string {
-	f, err := content.ReadFile("inputs/" + name + ".txt")
-	if err != nil {
-		log.Fatal(err)
-	}
-	return string(f)
-}
+//go:embed input.txt
+var input string
 
 func Test_day11(t *testing.T) {
 	tests := []struct {
@@ -32,7 +23,7 @@ func Test_day11(t *testing.T) {
 		},
 		{
 			name:  "example",
-			input: mustInput("1"),
+			input: input,
 			want:  "56397",
 		},
 	}
@@ -87,7 +78,7 @@ func Test_day12(t *testing.T) {
 		},
 		{
 			name:  "example",
-			input: mustInput("1"),
+			input: input,
 			want:  "55701",
 		},
 	}

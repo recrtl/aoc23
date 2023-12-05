@@ -1,12 +1,18 @@
-package aoc23_test
+package day
 
 import (
-	"github.com/recrtl/aoc23/day3"
+	_ "embed"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
-func Test_day31(t *testing.T) {
+//go:embed sample.txt
+var sample string
+
+//go:embed input.txt
+var input string
+
+func Test_day41(t *testing.T) {
 	tests := []struct {
 		name  string
 		input string
@@ -14,24 +20,24 @@ func Test_day31(t *testing.T) {
 	}{
 		{
 			name:  "sample",
-			input: mustInput("sample3"),
-			want:  "4361",
+			input: sample,
+			want:  "13",
 		},
 		{
 			name:  "input",
-			input: mustInput("input3"),
-			want:  "530849",
+			input: input,
+			want:  "25651",
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := day3.Part1(tt.input)
+			got := Part1(tt.input)
 			assert.Equal(t, tt.want, got)
 		})
 	}
 }
 
-func Test_day32(t *testing.T) {
+func Test_day42(t *testing.T) {
 	tests := []struct {
 		name  string
 		input string
@@ -39,18 +45,18 @@ func Test_day32(t *testing.T) {
 	}{
 		{
 			name:  "sample",
-			input: mustInput("sample3"),
-			want:  "467835",
+			input: sample,
+			want:  "30",
 		},
 		{
 			name:  "input",
-			input: mustInput("input3"),
-			want:  "84900879",
+			input: input,
+			want:  "19499881",
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := day3.Part2(tt.input)
+			got := Part2(tt.input)
 			assert.Equal(t, tt.want, got)
 		})
 	}
